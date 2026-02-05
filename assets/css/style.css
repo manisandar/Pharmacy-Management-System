@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #8a2be2, #6a5acd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #F0F4F8;
+    /* background: linear-gradient(90deg, rgba(91, 124, 250, 1) 0%, rgba(46, 204, 113, 1) 50%, rgba(239, 68, 68, 1) 100%); */
+    /* background: #30b0e3;
+    background: linear-gradient(90deg, rgba(48, 176, 227, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%); */
+    font-family: Arial, sans-serif;
+}
+
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login-card {
+    background: #ffffff;
+    width: 360px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.login-card h1 {
+    color: #3b3b8f;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.login-button{
+    width: 100%;
+}
+
+button {
+    /* width: 100%; */
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #4f7fd6;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3c68b6;
+}
+
+.error {
+    background: #ffe5e5;
+    color: #c0392b;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .bill-container, .bill-container * {
+        visibility: visible;
+    }
+    .bill-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}

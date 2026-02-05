@@ -1,0 +1,25 @@
+/* Edit Profile Button - Matches Logout Button Style */
+#editProfileBtn {
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#editProfileBtn:hover {
+    background: #2563eb;
+}
+
+/* Dark mode support */
+body.dark-mode #editProfileBtn {
+    background: #1e40af;
+}
+
+body.dark-mode #editProfileBtn:hover {
+    background: #1e3a8a;
+}
