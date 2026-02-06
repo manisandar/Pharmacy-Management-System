@@ -21,21 +21,21 @@ if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
 
 $medicine_id = $_GET["id"];
 
-// Check if medicine is used in any orders
-$check_stmt = $conn->prepare("SELECT COUNT(*) as order_count FROM order_items WHERE medicine_id = ?");
+// Check if medicine is referenced in order_items table (foreign key constraint)
+$check_stmt = $conn->prepare("SELECT COUNT(*) as total FROM order_items WHERE medicine_id = ?");
 $check_stmt->bind_param("i", $medicine_id);
 $check_stmt->execute();
-$result = $check_stmt->get_result();
-$row = $result->fetch_assoc();
+$check_result = $check_stmt->get_result();
+$check_data = $check_result->fetch_assoc();
 $check_stmt->close();
 
-if ($row['order_count'] > 0) {
-    // Medicine is in use, cannot delete
+if ($check_data['total'] > 0) {
+    // Medicine is in use in orders, cannot delete
     header("Location: dashboard.php?error=medicine_in_use");
     exit;
 }
 
-// Delete query
+// Delete query - only proceeds if medicine is not in any orders
 $stmt = $conn->prepare("DELETE FROM medicines WHERE medicine_id = ?");
 $stmt->bind_param("i", $medicine_id);
 
