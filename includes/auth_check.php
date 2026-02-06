@@ -1,5 +1,8 @@
 <?php
-session_start();
+// Start session only if not already active
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // If user is not logged in
 if (!isset($_SESSION["user_id"])) {
